@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Ticker from "./components/Ticker";
 import Intro from "./components/Intro";
 import Location from "./components/Location";
 import MasterPlan from "./components/MasterPlan";
@@ -17,7 +16,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Ticker />
         <Intro />
         <Location />
         <MasterPlan />

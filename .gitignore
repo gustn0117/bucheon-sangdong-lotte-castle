@@ -20,6 +20,9 @@
 # production
 /build
 
+# runtime inquiry store (persisted via Docker volume)
+/data
+
 # misc
 .DS_Store
 *.pem

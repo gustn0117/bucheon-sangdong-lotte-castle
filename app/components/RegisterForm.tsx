@@ -19,8 +19,10 @@ export default function RegisterForm() {
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({ name: false, phone: false, agree: false });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [serverError, setServerError] = useState(false);
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const next = {
       name: !name.trim(),
@@ -29,7 +31,22 @@ export default function RegisterForm() {
     };
     setErrors(next);
     if (next.name || next.phone || next.agree) return;
-    setSubmitted(true);
+
+    setSending(true);
+    setServerError(false);
+    try {
+      const res = await fetch("/api/inquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name.trim(), phone, type }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setSubmitted(true);
+    } catch {
+      setServerError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -90,8 +107,11 @@ export default function RegisterForm() {
             </span>
           </label>
 
-          <button type="submit" className="submit">
-            관심고객 등록하기
+          {serverError && (
+            <div className="form-err">일시적인 오류로 등록에 실패했습니다. 잠시 후 다시 시도해 주세요.</div>
+          )}
+          <button type="submit" className="submit" disabled={sending}>
+            {sending ? "등록 중…" : "관심고객 등록하기"}
           </button>
         </form>
       ) : (
