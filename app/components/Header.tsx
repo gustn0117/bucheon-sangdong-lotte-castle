@@ -1,0 +1,70 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Emblem from "./Emblem";
+import { NAV } from "../content";
+
+export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <>
+      <header className={`site-head${scrolled ? " scrolled" : ""}`}>
+        <a className="brand" href="#top">
+          <Emblem />
+          <span className="brand-txt">
+            <b>LOTTE CASTLE</b>
+            <span>Sangdong Station</span>
+          </span>
+        </a>
+        <nav className="nav">
+          {NAV.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <a className="head-cta" href="#register">
+          관심고객 등록 →
+        </a>
+        <button
+          className="burger"
+          aria-label="메뉴 열기"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          style={{ opacity: open ? 0 : 1 }}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </header>
+
+      <div className={`m-menu${open ? " open" : ""}`}>
+        {NAV.map((item) => (
+          <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            {item.label}
+          </a>
+        ))}
+        <a href="#register" onClick={() => setOpen(false)} style={{ color: "var(--gold)" }}>
+          관심고객 등록
+        </a>
+      </div>
+    </>
+  );
+}
