@@ -5,7 +5,7 @@ import { SPECS, LANDSCAPE } from "../content";
 
 export default function MasterPlan() {
   return (
-    <section className="sec" id="masterplan" style={{ background: "linear-gradient(180deg,var(--ink),var(--ink-soft))" }}>
+    <section className="sec masterplan" id="masterplan">
       <div className="wrap">
         <div className="sec-head">
           <div className="top">

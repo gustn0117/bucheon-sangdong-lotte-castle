@@ -1,12 +1,11 @@
 import { TICKER } from "../content";
 
+// Static key-points strip (marquee animation removed).
 export default function Ticker() {
-  // Doubled list so the marquee loops seamlessly.
-  const items = [...TICKER, ...TICKER];
   return (
-    <div className="ticker" aria-hidden="true">
+    <div className="ticker">
       <div className="ticker-track">
-        {items.map((text, i) => (
+        {TICKER.map((text, i) => (
           <span key={i}>{text}</span>
         ))}
       </div>
