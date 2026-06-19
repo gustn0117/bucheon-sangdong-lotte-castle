@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 import Counter from "./Counter";
+import Zoom from "./Zoom";
 import { SPECS, LANDSCAPE } from "../content";
 
 export default function MasterPlan() {
@@ -25,14 +26,18 @@ export default function MasterPlan() {
 
         <div className="mp-grid">
           <Reveal as="figure" className="mp-fig">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/siteplan-3d.png" alt="상동역 롯데캐슬 단지 조감도" />
+            <Zoom full="/assets/siteplan-3d.png" caption="단지 조감도 (CG)">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/siteplan-3d.png" alt="상동역 롯데캐슬 단지 조감도" />
+            </Zoom>
             <figcaption>단지 조감도 (CG)</figcaption>
           </Reveal>
           <div className="mp-side">
             <Reveal as="figure" className="mp-fig" delay={120}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/siteplan-top.png" alt="상동역 롯데캐슬 단지 배치도" />
+              <Zoom full="/assets/siteplan-top.png" caption="단지 배치도 (CG)">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/siteplan-top.png" alt="상동역 롯데캐슬 단지 배치도" />
+              </Zoom>
               <figcaption>단지 배치도 (CG)</figcaption>
             </Reveal>
           </div>
@@ -56,14 +61,16 @@ export default function MasterPlan() {
         {/* landscape */}
         <div className="land">
           <Reveal as="figure" className="land-fig">
-            <Image
-              src="/assets/landscape.jpg"
-              alt="상동역 롯데캐슬 중앙광장 및 수경시설 조경 투시도"
-              width={1160}
-              height={1325}
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              style={{ width: "100%", height: "auto" }}
-            />
+            <Zoom full="/assets/landscape.jpg" caption="중앙광장 · 수경시설 (CG)">
+              <Image
+                src="/assets/landscape.jpg"
+                alt="상동역 롯데캐슬 중앙광장 및 수경시설 조경 투시도"
+                width={1160}
+                height={1325}
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </Zoom>
           </Reveal>
           <div className="land-copy">
             <Reveal as="span" className="eyebrow">

@@ -1,4 +1,3 @@
-import Emblem from "./Emblem";
 import { PROJECT, DISCLAIMER } from "../content";
 
 export default function Footer() {
@@ -7,12 +6,9 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-top">
           <div className="foot-brand">
-            <a className="brand" href="#top">
-              <Emblem />
-              <span className="brand-txt">
-                <b>LOTTE CASTLE</b>
-                <span>Sangdong Station</span>
-              </span>
+            <a className="brand" href="#top" aria-label="상동역 롯데캐슬 홈">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="brand-logo foot-logo" src="/assets/lotte-castle-logo.png" alt="LOTTE CASTLE" />
             </a>
             <p>
               부천 상동의 새로운 기준, 상동역 롯데캐슬. 7호선 초역세권에 들어서는 초고층 프리미엄

@@ -415,3 +415,31 @@ footer{background:var(--bg);padding:56px 0 36px;border-top:1px solid var(--line)
 @media(max-width:480px){
   .wrap{padding:0 16px}
 }
+
+/* ===========================================================
+   LOGO (official LOTTE CASTLE BI)
+   =========================================================== */
+.brand-logo{height:26px;width:auto;display:block}
+.brand-loc{font-size:.82rem;font-weight:700;color:var(--navy);padding-left:12px;border-left:1px solid var(--line)}
+.foot-logo{height:30px}
+@media(max-width:860px){
+  .brand-logo{height:22px}
+  .brand-loc{font-size:.78rem;padding-left:10px}
+}
+
+/* ===========================================================
+   ZOOM / LIGHTBOX (click image → original)
+   =========================================================== */
+.zoom-trigger{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;position:relative;line-height:0;color:inherit;font:inherit}
+.mp-fig .zoom-trigger{height:100%}
+.zoom-hint{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(27,44,73,.82);display:grid;place-items:center;opacity:0;transform:scale(.92);transition:opacity .2s var(--ease),transform .2s var(--ease);pointer-events:none}
+.zoom-trigger:hover .zoom-hint,.zoom-trigger:focus-visible .zoom-hint{opacity:1;transform:scale(1)}
+.zoom-hint svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.9}
+
+.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(12,16,22,.93);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;animation:lbfade .2s ease}
+.lightbox img{max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;border-radius:6px;cursor:default;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+.lb-close{position:absolute;top:16px;right:20px;width:44px;height:44px;font-size:2rem;line-height:1;color:#fff;background:rgba(255,255,255,.12);border-radius:50%;display:grid;place-items:center;transition:background .2s}
+.lb-close:hover{background:rgba(255,255,255,.24)}
+.lb-cap{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:rgba(255,255,255,.85);font-size:.86rem;pointer-events:none}
+@keyframes lbfade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.lightbox{animation:none}.zoom-hint{transition:none}}

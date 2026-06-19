@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Reveal from "./Reveal";
+import Zoom from "./Zoom";
 import { PLANS } from "../content";
 
 export default function FloorPlans() {
@@ -42,14 +43,16 @@ export default function FloorPlans() {
         {PLANS.map((plan) => (
           <div className={`plan-panel${active === plan.key ? " show" : ""}`} data-panel={plan.key} key={plan.key}>
             <div className="plan-img">
-              <Image
-                src={plan.img}
-                alt={`${plan.title}타입 평면도`}
-                width={1160}
-                height={750}
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                style={{ width: "100%", height: "auto" }}
-              />
+              <Zoom full={plan.img} caption={`${plan.title}타입 평면도`}>
+                <Image
+                  src={plan.img}
+                  alt={`${plan.title}타입 평면도`}
+                  width={1160}
+                  height={750}
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </Zoom>
             </div>
             <div className="plan-info">
               <span className="ptype">{plan.ptype}</span>

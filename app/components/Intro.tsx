@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
-import Emblem from "./Emblem";
+import Zoom from "./Zoom";
 
 export default function Intro() {
   return (
@@ -27,19 +27,20 @@ export default function Intro() {
             단지가 들어섭니다. 쾌적함과 품격을 동시에 누리는 일상이 이곳에서 시작됩니다.
           </Reveal>
           <Reveal as="div" className="brand-badge" delay={280}>
-            <Emblem />
             대한민국 프리미엄 주거 브랜드, LOTTE CASTLE
           </Reveal>
         </div>
         <Reveal as="figure" className="intro-fig fig-frame" delay={120}>
-          <Image
-            src="/assets/entrance-gate.jpg"
-            alt="상동역 롯데캐슬 단지 출입구 문주 투시도"
-            width={1160}
-            height={826}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            style={{ width: "100%", height: "auto" }}
-          />
+          <Zoom full="/assets/entrance-gate.jpg" caption="단지 문주 (CG)">
+            <Image
+              src="/assets/entrance-gate.jpg"
+              alt="상동역 롯데캐슬 단지 출입구 문주 투시도"
+              width={1160}
+              height={826}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Zoom>
           <figcaption>단지 문주 (CG)</figcaption>
         </Reveal>
       </div>

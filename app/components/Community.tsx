@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
+import Zoom from "./Zoom";
 import { COMMUNITY_FLOORS } from "../content";
 
 export default function Community() {
@@ -23,14 +24,16 @@ export default function Community() {
         </div>
 
         <Reveal as="figure" className="comm-hero">
-          <Image
-            src="/assets/community-interior.jpg"
-            alt="캐슬리안센터 실내골프클럽·피트니스클럽·북카페·1인 독서실 투시도"
-            width={1080}
-            height={697}
-            sizes="(max-width: 1280px) 100vw, 1200px"
-            style={{ width: "100%", height: "auto" }}
-          />
+          <Zoom full="/assets/community-interior.jpg" caption="캐슬리안센터 커뮤니티 (CG)">
+            <Image
+              src="/assets/community-interior.jpg"
+              alt="캐슬리안센터 실내골프클럽·피트니스클럽·북카페·1인 독서실 투시도"
+              width={1080}
+              height={697}
+              sizes="(max-width: 1280px) 100vw, 1200px"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Zoom>
         </Reveal>
 
         <div className="comm-flrs">
@@ -44,14 +47,16 @@ export default function Community() {
         </div>
 
         <Reveal as="figure" className="comm-map">
-          <Image
-            src="/assets/community-map.jpg"
-            alt="캐슬리안센터 커뮤니티 시설 배치도"
-            width={1080}
-            height={685}
-            sizes="(max-width: 1280px) 100vw, 1200px"
-            style={{ width: "100%", height: "auto" }}
-          />
+          <Zoom full="/assets/community-map.jpg" caption="커뮤니티 시설 배치도 (CG)">
+            <Image
+              src="/assets/community-map.jpg"
+              alt="캐슬리안센터 커뮤니티 시설 배치도"
+              width={1080}
+              height={685}
+              sizes="(max-width: 1280px) 100vw, 1200px"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Zoom>
         </Reveal>
         <p className="comm-cap">▲ 커뮤니티 시설 배치도 — 시설 구성 및 명칭은 변경될 수 있습니다 (CG)</p>
       </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Emblem from "./Emblem";
 import { NAV } from "../content";
 
 export default function Header() {
@@ -25,12 +24,10 @@ export default function Header() {
   return (
     <>
       <header className={`site-head${scrolled ? " scrolled" : ""}`}>
-        <a className="brand" href="#top">
-          <Emblem />
-          <span className="brand-txt">
-            <b>LOTTE CASTLE</b>
-            <span>Sangdong Station</span>
-          </span>
+        <a className="brand" href="#top" aria-label="상동역 롯데캐슬 홈">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="brand-logo" src="/assets/lotte-castle-logo.png" alt="LOTTE CASTLE" />
+          <span className="brand-loc">상동역</span>
         </a>
         <nav className="nav">
           {NAV.map((item) => (
@@ -61,7 +58,7 @@ export default function Header() {
             {item.label}
           </a>
         ))}
-        <a href="#register" onClick={() => setOpen(false)} style={{ color: "var(--gold)" }}>
+        <a href="#register" onClick={() => setOpen(false)} style={{ color: "var(--gold-deep)" }}>
           관심고객 등록
         </a>
       </div>
