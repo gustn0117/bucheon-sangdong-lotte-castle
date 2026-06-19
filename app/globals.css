@@ -153,6 +153,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .hero-stats .st:nth-child(4){border-right:none}
 .hero-stats .st b{display:block;font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--navy);line-height:1;letter-spacing:-.02em}
 .hero-stats .st b small{font-size:.46em;font-weight:700;color:var(--gold-deep);margin-left:.18em}
+.hero-stats .st b.st-text{font-size:clamp(1.2rem,2vw,1.65rem)}
 .hero-stats .st span{display:block;margin-top:10px;font-size:.84rem;color:var(--muted)}
 
 /* ===========================================================

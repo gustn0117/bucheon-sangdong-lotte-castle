@@ -33,7 +33,9 @@ export default function Hero() {
         <div className="hero-stats">
           {HERO_STATS.map((stat, i) => (
             <div className="st" key={i}>
-              <b>{typeof stat.value === "number" ? <Counter value={stat.value} /> : stat.text}</b>
+              <b className={typeof stat.value === "number" ? undefined : "st-text"}>
+                {typeof stat.value === "number" ? <Counter value={stat.value} /> : stat.text}
+              </b>
               <span>{stat.label}</span>
             </div>
           ))}
