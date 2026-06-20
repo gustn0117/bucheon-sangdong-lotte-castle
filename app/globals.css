@@ -202,6 +202,11 @@ section:not(.hero){scroll-margin-top:76px}
 .intro-fig img{border-radius:10px;border:1px solid var(--line);width:100%;height:auto}
 .intro-fig figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);padding:7px 14px;border-radius:6px;font-size:.76rem;font-weight:600;color:var(--navy);border:1px solid var(--line)}
 .fig-frame{position:relative}
+.brand-pillars{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:clamp(40px,6vw,72px)}
+.pillar{background:var(--bg-card);border:1px solid var(--line);border-radius:12px;padding:34px 32px}
+.pillar-en{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
+.pillar h3{font-size:clamp(1.3rem,2.4vw,1.85rem);font-weight:800;color:var(--navy);margin:10px 0 14px;letter-spacing:-.01em}
+.pillar p{color:var(--muted);line-height:1.8;font-size:.96rem}
 
 /* ===========================================================
    LOCATION
@@ -386,7 +391,7 @@ footer{background:var(--bg);padding:56px 0 36px;border-top:1px solid var(--line)
    RESPONSIVE
    =========================================================== */
 @media(max-width:1024px){
-  .intro-grid,.land,.mp-grid,.plan-panel.show,.info-grid,.cta-inner{grid-template-columns:1fr}
+  .intro-grid,.land,.mp-grid,.plan-panel.show,.info-grid,.cta-inner,.brand-pillars{grid-template-columns:1fr}
   .land{gap:36px}
   .land-fig{order:-1}
   .nav{display:none}
