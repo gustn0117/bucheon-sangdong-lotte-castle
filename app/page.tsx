@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import EventBanner from "./components/EventBanner";
 import Intro from "./components/Intro";
 import Location from "./components/Location";
 import MasterPlan from "./components/MasterPlan";
@@ -17,7 +16,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <EventBanner />
         <Intro />
         <Location />
         <MasterPlan />
