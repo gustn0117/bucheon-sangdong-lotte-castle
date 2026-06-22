@@ -11,8 +11,10 @@ type Inquiry = {
 };
 
 const TYPE_LABEL: Record<string, string> = {
-  "84": "84타입",
-  "128": "128타입",
+  "84": "전용 84㎡",
+  "113": "전용 113㎡",
+  "121": "전용 121㎡",
+  penthouse: "펜트하우스",
   undecided: "미정 / 상담희망",
 };
 

@@ -282,8 +282,10 @@ export const TIMELINE: TimelineItem[] = [
 ];
 
 export const PLAN_OPTIONS = [
-  { value: "84", label: "84 TYPE" },
-  { value: "128", label: "128 TYPE" },
+  { value: "84", label: "전용 84㎡ (84A~F)" },
+  { value: "113", label: "전용 113㎡ (113A·B)" },
+  { value: "121", label: "전용 121㎡" },
+  { value: "penthouse", label: "펜트하우스 (192·153·187P)" },
   { value: "undecided", label: "미정 / 상담희망" },
 ];
 
