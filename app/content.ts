@@ -195,6 +195,50 @@ export const PLANS: PlanType[] = [
   },
 ];
 
+// 공식 사업개요 — 아파트 주택타입 및 세대수 (출처: 상동역 롯데캐슬 관심고객등록 이벤트 페이지)
+export type UnitGroup = {
+  area: string;
+  total: number;
+  subs: { t: string; n: number }[];
+};
+export const UNIT_TOTAL = 1859;
+export const UNIT_GROUPS: UnitGroup[] = [
+  {
+    area: "전용 84㎡",
+    total: 1370,
+    subs: [
+      { t: "84A", n: 224 },
+      { t: "84B", n: 84 },
+      { t: "84C", n: 353 },
+      { t: "84D", n: 89 },
+      { t: "84E", n: 178 },
+      { t: "84F", n: 442 },
+    ],
+  },
+  {
+    area: "전용 113㎡",
+    total: 308,
+    subs: [
+      { t: "113A", n: 224 },
+      { t: "113B", n: 84 },
+    ],
+  },
+  {
+    area: "전용 121㎡",
+    total: 178,
+    subs: [{ t: "121", n: 178 }],
+  },
+  {
+    area: "펜트하우스",
+    total: 3,
+    subs: [
+      { t: "192P", n: 1 },
+      { t: "153P", n: 1 },
+      { t: "187P", n: 1 },
+    ],
+  },
+];
+
 export const COMMUNITY_FLOORS = [
   {
     fl: "B1F · Castlean Center",
@@ -217,14 +261,16 @@ export type InfoRow = { dt: string; dd: string; badge?: string };
 export const INFO_ROWS: InfoRow[] = [
   { dt: "단지명", dd: "상동역 롯데캐슬", badge: "정식명 추후확정" },
   { dt: "위치", dd: "경기도 부천시 원미구 상동 540-1번지 일원 (구 홈플러스 상동점 부지)" },
+  { dt: "시행사", dd: "(주)미래도시" },
   { dt: "시공사", dd: "**롯데건설(주)**" },
-  { dt: "규모", dd: "지하 ~ 지상 최고 49층 · 7개동 (초고층 주상복합)" },
-  { dt: "세대수", dd: "약 1,859세대 (아파트 + 오피스텔)" },
-  { dt: "주택형", dd: "전용 84㎡ · 128㎡ 등 (타입 구성은 모집공고 확정)" },
+  { dt: "규모", dd: "지하 8층 ~ 지상 49층 · 7개동 (초고층 주상복합)" },
+  { dt: "세대수", dd: "총 1,859세대 (12개 주택형)" },
+  { dt: "주택형", dd: "**전용 84㎡(A~F) · 113㎡(A·B) · 121㎡** + 펜트하우스(192·153·187P)" },
   { dt: "주차대수", dd: "약 3,455대 (법정대수 초과)" },
   { dt: "규제", dd: "**비규제지역** (조정대상지역·투기과열지구 미지정)" },
+  { dt: "분양시기", dd: "2026년 07월 예정", badge: "변동 가능" },
   { dt: "분양가", dd: "추후 공개", badge: "관심고객 등록 시 안내" },
-  { dt: "입주예정", dd: "추후 공개 (준공 목표 2029~2030년)", badge: "모집공고 확정" },
+  { dt: "입주예정", dd: "추후 공개", badge: "모집공고 확정" },
 ];
 
 export type TimelineItem = { t: string; title: string; desc: string; now?: boolean };

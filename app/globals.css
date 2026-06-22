@@ -303,6 +303,19 @@ section:not(.hero){scroll-margin-top:76px}
 .plan-rooms{display:flex;flex-wrap:wrap;gap:8px}
 .plan-rooms span{font-size:.82rem;padding:7px 14px;background:var(--bg-soft);border:1px solid var(--line);border-radius:7px;color:var(--ink-soft)}
 
+/* unit type lineup */
+.unit-types{margin-top:clamp(44px,5vw,64px)}
+.unit-types h3{font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:800;color:var(--navy);margin-bottom:22px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.unit-types h3 span{font-size:.82rem;font-weight:700;color:var(--gold-deep);letter-spacing:0}
+.ut-groups{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ut-group{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.ut-ghead{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.ut-ghead b{font-size:1.12rem;font-weight:800;color:var(--navy)}
+.ut-ghead span{font-size:.92rem;font-weight:700;color:var(--gold-deep)}
+.ut-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ut-chips span{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 13px;font-size:.88rem;font-weight:700;color:var(--navy)}
+.ut-chips span i{font-style:normal;font-weight:600;color:var(--muted);font-size:.82rem}
+
 /* ===========================================================
    COMMUNITY
    =========================================================== */
@@ -432,6 +445,7 @@ footer{background:var(--bg);padding:56px 0 36px;border-top:1px solid var(--line)
   .mobile-bar svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
   footer{padding-bottom:92px}
   .plan-feat{grid-template-columns:1fr 1fr}
+  .ut-groups{grid-template-columns:1fr}
   .field.two{grid-template-columns:1fr}
   .foot-top{flex-direction:column}
   .foot-meta{text-align:left}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import Zoom from "./Zoom";
-import { PLANS } from "../content";
+import { PLANS, UNIT_GROUPS, UNIT_TOTAL } from "../content";
 
 export default function FloorPlans() {
   const [active, setActive] = useState<"84" | "128">("84");
@@ -21,8 +21,8 @@ export default function FloorPlans() {
             삶의 깊이를 담은 <b>공간 설계</b>
           </Reveal>
           <Reveal as="p" className="sec-lead" delay={100}>
-            실수요자를 위한 효율적인 평면과 넉넉한 수납. 드레스룸·다용도실·펜트리·알파룸까지, 가족의
-            라이프 스타일에 꼭 맞춘 타입을 만나보세요.
+            전용 84㎡부터 113㎡·121㎡, 그리고 펜트하우스까지 — 총 12개 주택형, 약 1,859세대로 구성됩니다.
+            아래는 대표 평면이며, 전체 주택형 구성은 하단에서 확인하실 수 있습니다.
           </Reveal>
         </div>
 
@@ -77,6 +77,30 @@ export default function FloorPlans() {
             </div>
           </div>
         ))}
+
+        <div className="unit-types">
+          <Reveal as="h3">
+            주택형 구성 <span>총 {UNIT_TOTAL.toLocaleString()}세대 · 12개 타입</span>
+          </Reveal>
+          <div className="ut-groups">
+            {UNIT_GROUPS.map((g) => (
+              <Reveal className="ut-group" key={g.area}>
+                <div className="ut-ghead">
+                  <b>{g.area}</b>
+                  <span>{g.total.toLocaleString()}세대</span>
+                </div>
+                <div className="ut-chips">
+                  {g.subs.map((s) => (
+                    <span key={s.t}>
+                      {s.t}
+                      <i>{s.n}세대</i>
+                    </span>
+                  ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
 
         <p className="comm-cap" style={{ marginTop: 40, color: "var(--on-light-mut)" }}>
           ※ 평면도는 타입별 대표 평면이며, 전용/공급 면적·타입 구성·발코니 확장 여부 등 세부 사항은
