@@ -80,25 +80,40 @@ export default function FloorPlans() {
 
         <div className="unit-types">
           <Reveal as="h3">
-            주택형 구성 <span>총 {UNIT_TOTAL.toLocaleString()}세대 · 12개 타입</span>
+            아파트 주택타입 및 세대수 <span>총 {UNIT_TOTAL.toLocaleString()}세대 · 12개 타입</span>
           </Reveal>
-          <div className="ut-groups">
-            {UNIT_GROUPS.map((g) => (
-              <Reveal className="ut-group" key={g.area}>
-                <div className="ut-ghead">
-                  <b>{g.area}</b>
-                  <span>{g.total.toLocaleString()}세대</span>
-                </div>
-                <div className="ut-chips">
-                  {g.subs.map((s) => (
-                    <span key={s.t}>
-                      {s.t}
-                      <i>{s.n}세대</i>
-                    </span>
-                  ))}
-                </div>
-              </Reveal>
-            ))}
+          <div className="ut-tablewrap">
+            <table className="ut-table">
+              <thead>
+                <tr>
+                  <th>타입형</th>
+                  <th>일반분양</th>
+                  <th>조합분양</th>
+                  <th>임대</th>
+                  <th>세대수</th>
+                </tr>
+              </thead>
+              <tbody>
+                {UNIT_GROUPS.flatMap((g) => g.subs).map((s) => (
+                  <tr key={s.t}>
+                    <td>{s.t}</td>
+                    <td>{s.n.toLocaleString()}</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>{s.n.toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>계</td>
+                  <td>{UNIT_TOTAL.toLocaleString()}</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>{UNIT_TOTAL.toLocaleString()}</td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
         </div>
 
