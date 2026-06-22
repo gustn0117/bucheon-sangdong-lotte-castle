@@ -25,7 +25,7 @@ export default function Hero() {
         </h1>
         <p className="hero-sub">
           부천 상동의 중심에 들어서는 <b>지상 최고 49층</b> 초고층 랜드마크.
-          롯데건설이 짓는 약 <b>1,853세대</b> 대단지가 도시의 새로운 기준을 세웁니다.
+          롯데건설이 짓는 약 <b>1,859세대</b> 대단지가 도시의 새로운 기준을 세웁니다.
         </p>
 
         <div className="hero-cta-row">

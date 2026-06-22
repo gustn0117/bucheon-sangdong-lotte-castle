@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <div className="foot-meta">
             <div>
-              분양 문의 · <a href="#register"><b>관심고객 등록</b></a>
+              분양 문의 · <a href={`tel:${PROJECT.tel}`}><b>{PROJECT.tel}</b></a>
             </div>
             <div>경기도 부천시 원미구 상동 540-1 일원</div>
             <div>시공 · {PROJECT.builder}</div>

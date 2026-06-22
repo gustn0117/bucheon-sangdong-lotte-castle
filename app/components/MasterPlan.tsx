@@ -16,7 +16,7 @@ export default function MasterPlan() {
           <Reveal as="h2" className="sec-title">
             하나의 도시를 닮은,
             <br />
-            <b>약 1,853세대</b> 대단지 설계
+            <b>약 1,859세대</b> 대단지 설계
           </Reveal>
           <Reveal as="p" className="sec-lead" delay={100}>
             초고층 타워가 빚어내는 부천의 새로운 스카이라인. 입주민의 동선과 프라이버시, 채광과 조경까지

@@ -7,7 +7,7 @@
 export const PROJECT = {
   name: "상동역 롯데캐슬",
   enName: "Sangdong Station · Lotte Castle",
-  tel: "1600-0000", // 견본: 실제 분양 상담번호로 교체
+  tel: "1588-8378", // 대표번호
   address: "경기도 부천시 원미구 상동 540-1번지 일원 (구 홈플러스 상동점 부지)",
   builder: "롯데건설(주)",
 };
@@ -24,7 +24,7 @@ export type HeroStat = { value?: number; text?: string; label: string };
 export const HERO_STATS: HeroStat[] = [
   { value: 7, label: "상동역 초역세권 직결" },
   { value: 49, label: "지상 최고 49층 초고층" },
-  { value: 1853, label: "세대 규모 대단지" },
+  { value: 1859, label: "세대 규모 대단지" },
   { text: "롯데건설", label: "프리미엄 브랜드 시공" },
 ];
 
@@ -138,7 +138,7 @@ export type Spec = { value: number; unit?: string; label: string };
 export const SPECS: Spec[] = [
   { value: 49, unit: "F", label: "지상 최고 층수" },
   { value: 7, unit: "개동", label: "단지 규모" },
-  { value: 1853, unit: "세대", label: "아파트+오피스텔" },
+  { value: 1859, unit: "세대", label: "아파트+오피스텔" },
   { value: 3455, unit: "대", label: "주차 (법정 초과)" },
 ];
 
@@ -219,7 +219,7 @@ export const INFO_ROWS: InfoRow[] = [
   { dt: "위치", dd: "경기도 부천시 원미구 상동 540-1번지 일원 (구 홈플러스 상동점 부지)" },
   { dt: "시공사", dd: "**롯데건설(주)**" },
   { dt: "규모", dd: "지하 ~ 지상 최고 49층 · 7개동 (초고층 주상복합)" },
-  { dt: "세대수", dd: "약 1,853세대 (아파트 936세대 + 오피스텔 917실)" },
+  { dt: "세대수", dd: "약 1,859세대 (아파트 + 오피스텔)" },
   { dt: "주택형", dd: "전용 84㎡ · 128㎡ 등 (타입 구성은 모집공고 확정)" },
   { dt: "주차대수", dd: "약 3,455대 (법정대수 초과)" },
   { dt: "규제", dd: "**비규제지역** (조정대상지역·투기과열지구 미지정)" },
