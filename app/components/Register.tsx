@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import RegisterForm from "./RegisterForm";
+import { PROJECT } from "../content";
 
 export default function Register() {
   return (
@@ -22,6 +23,18 @@ export default function Register() {
             <li>분양가 · 분양 일정 우선 안내</li>
             <li>견본주택(모델하우스) 오픈 소식</li>
             <li>청약 자격 · 절차 안내</li>
+          </Reveal>
+          <Reveal as="div" className="cta-call" delay={260}>
+            <div className="cc-info">
+              <span className="cc-label">전화 상담 · 분양 문의</span>
+              <a className="cc-num" href={`tel:${PROJECT.tel}`}>{PROJECT.tel}</a>
+            </div>
+            <a className="cc-btn" href={`tel:${PROJECT.tel}`}>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z" />
+              </svg>
+              전화하기
+            </a>
           </Reveal>
         </div>
 
