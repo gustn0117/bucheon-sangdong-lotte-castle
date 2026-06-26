@@ -23,6 +23,12 @@ export default function Footer() {
             <div>시공 · {PROJECT.builder}</div>
           </div>
         </div>
+        <div className="foot-biz">
+          <b>상동부동산라운지공인중개사사무소</b>
+          <span>대표 박범순</span>
+          <span>사업자등록번호 777-30-01727</span>
+          <span>경기도 부천시 원미구 길주로 91, 120호</span>
+        </div>
         <p className="disclaimer">※ {DISCLAIMER}</p>
         <p className="copy">
           © 2026 Sangdong Station Lotte Castle. 본 페이지는 홍보용으로 제작된 비공식 랜딩페이지입니다.
