@@ -6,6 +6,7 @@ type Inquiry = {
   id: string;
   name: string;
   phone: string;
+  birth: string;
   type: string;
   createdAt: string;
 };
@@ -84,8 +85,14 @@ export default function AdminClient() {
   }
 
   function downloadCsv() {
-    const head = ["등록일시", "성함", "연락처", "관심평형"];
-    const rows = list.map((x) => [fmt(x.createdAt), x.name, x.phone, TYPE_LABEL[x.type] || x.type]);
+    const head = ["등록일시", "성함", "연락처", "생년월일", "관심평형"];
+    const rows = list.map((x) => [
+      fmt(x.createdAt),
+      x.name,
+      x.phone,
+      x.birth || "",
+      TYPE_LABEL[x.type] || x.type,
+    ]);
     const csv =
       "﻿" +
       [head, ...rows].map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("\n");
@@ -153,6 +160,7 @@ export default function AdminClient() {
                 <th>등록일시</th>
                 <th>성함</th>
                 <th>연락처</th>
+                <th>생년월일</th>
                 <th>관심 평형</th>
                 <th></th>
               </tr>
@@ -165,6 +173,7 @@ export default function AdminClient() {
                   <td>
                     <a href={`tel:${x.phone}`}>{x.phone}</a>
                   </td>
+                  <td>{x.birth || "-"}</td>
                   <td>{TYPE_LABEL[x.type] || x.type || "-"}</td>
                   <td>
                     <button className="del" onClick={() => remove(x.id)}>

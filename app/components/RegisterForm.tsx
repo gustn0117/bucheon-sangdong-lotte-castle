@@ -10,11 +10,19 @@ function formatPhone(raw: string) {
   return v;
 }
 
+function formatBirth(raw: string) {
+  const v = raw.replace(/\D/g, "").slice(0, 8);
+  if (v.length > 6) return v.replace(/(\d{4})(\d{2})(\d{1,2})/, "$1-$2-$3");
+  if (v.length > 4) return v.replace(/(\d{4})(\d{1,2})/, "$1-$2");
+  return v;
+}
+
 const ERR = "#c0492f";
 
 export default function RegisterForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [birth, setBirth] = useState("");
   const [type, setType] = useState("84");
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({ name: false, phone: false, agree: false });
@@ -38,7 +46,7 @@ export default function RegisterForm() {
       const res = await fetch("/api/inquiries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), phone, type }),
+        body: JSON.stringify({ name: name.trim(), phone, birth, type }),
       });
       if (!res.ok) throw new Error("failed");
       setSubmitted(true);
@@ -88,22 +96,35 @@ export default function RegisterForm() {
               />
             </div>
             <div className="f field" style={{ margin: 0 }}>
-              <label htmlFor="type">관심 주택형</label>
-              <select id="type" name="type" value={type} onChange={(e) => setType(e.target.value)}>
-                {PLAN_OPTIONS.map((opt) => (
-                  <option value={opt.value} key={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
+              <label htmlFor="birth">생년월일</label>
+              <input
+                type="text"
+                id="birth"
+                name="birth"
+                inputMode="numeric"
+                placeholder="YYYY-MM-DD"
+                value={birth}
+                onChange={(e) => setBirth(formatBirth(e.target.value))}
+              />
             </div>
+          </div>
+
+          <div className="field">
+            <label htmlFor="type">관심 주택형</label>
+            <select id="type" name="type" value={type} onChange={(e) => setType(e.target.value)}>
+              {PLAN_OPTIONS.map((opt) => (
+                <option value={opt.value} key={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
           </div>
 
           <label className="consent" htmlFor="agree" style={errors.agree ? { color: "#e0855f" } : undefined}>
             <input type="checkbox" id="agree" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
             <span>
-              개인정보 수집·이용 및 마케팅 정보 수신에 동의합니다. (성함·연락처는 분양 상담 목적에 한해
-              이용되며, 목적 달성 시 파기됩니다.) <a href="#info">자세히</a>
+              개인정보 수집·이용 및 마케팅 정보 수신에 동의합니다. (성함·연락처·생년월일은 분양 상담 목적에
+              한해 이용되며, 목적 달성 시 파기됩니다.) <a href="#info">자세히</a>
             </span>
           </label>
 

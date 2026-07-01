@@ -14,6 +14,7 @@ type Inquiry = {
   id: string;
   name: string;
   phone: string;
+  birth: string;
   type: string;
   createdAt: string;
 };
@@ -42,13 +43,14 @@ export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null);
   const name = body?.name ? String(body.name).trim().slice(0, 50) : "";
   const phone = body?.phone ? String(body.phone).trim().slice(0, 20) : "";
+  const birth = body?.birth ? String(body.birth).trim().slice(0, 20) : "";
   const type = body?.type ? String(body.type).trim().slice(0, 20) : "";
   if (!name || phone.replace(/\D/g, "").length < 10) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
   const list = await readAll();
   const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-  list.push({ id, name, phone, type, createdAt: new Date().toISOString() });
+  list.push({ id, name, phone, birth, type, createdAt: new Date().toISOString() });
   await writeAll(list);
   return NextResponse.json({ ok: true });
 }
