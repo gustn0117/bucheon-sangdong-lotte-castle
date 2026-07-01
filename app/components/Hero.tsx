@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="hero-bg">
         <Image
           src="/assets/hero-towers.jpg"
-          alt="상동역 롯데캐슬 초고층 트윈 타워 조감도"
+          alt="상동역 롯데캐슬 시그니처 초고층 트윈 타워 조감도"
           fill
           priority
           sizes="100vw"
@@ -20,7 +20,7 @@ export default function Hero() {
         <h1>
           <span className="l1">7호선 상동역 초역세권, 도심 속 여유를 누리는</span>
           <span className="l2">
-            상동역 <em>롯데캐슬</em>
+            상동역 <em>롯데캐슬 시그니처</em>
           </span>
         </h1>
         <p className="hero-sub">

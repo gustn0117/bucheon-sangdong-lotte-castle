@@ -47,7 +47,7 @@ export default function Intro() {
           <Zoom full="/assets/entrance-gate.jpg" caption="단지 문주 (CG)">
             <Image
               src="/assets/entrance-gate.jpg"
-              alt="상동역 롯데캐슬 단지 출입구 문주 투시도"
+              alt="상동역 롯데캐슬 시그니처 단지 출입구 문주 투시도"
               width={1160}
               height={826}
               sizes="(max-width: 1024px) 100vw, 50vw"

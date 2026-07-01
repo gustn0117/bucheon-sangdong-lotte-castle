@@ -24,10 +24,10 @@ export default function Header() {
   return (
     <>
       <header className={`site-head${scrolled ? " scrolled" : ""}`}>
-        <a className="brand" href="#top" aria-label="상동역 롯데캐슬 홈">
+        <a className="brand" href="#top" aria-label="상동역 롯데캐슬 시그니처 홈">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className="brand-logo" src="/assets/lotte-castle-logo.png" alt="LOTTE CASTLE" />
-          <span className="brand-loc">상동역</span>
+          <span className="brand-loc">상동역 시그니처</span>
         </a>
         <nav className="nav">
           {NAV.map((item) => (

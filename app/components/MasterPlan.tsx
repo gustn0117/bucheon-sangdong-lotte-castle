@@ -28,7 +28,7 @@ export default function MasterPlan() {
           <Reveal as="figure" className="mp-fig">
             <Zoom full="/assets/siteplan-3d.png" caption="단지 조감도 (CG)">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/siteplan-3d.png" alt="상동역 롯데캐슬 단지 조감도" />
+              <img src="/assets/siteplan-3d.png" alt="상동역 롯데캐슬 시그니처 단지 조감도" />
             </Zoom>
             <figcaption>단지 조감도 (CG)</figcaption>
           </Reveal>
@@ -36,7 +36,7 @@ export default function MasterPlan() {
             <Reveal as="figure" className="mp-fig" delay={120}>
               <Zoom full="/assets/siteplan-top.png" caption="단지 배치도 (CG)">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/siteplan-top.png" alt="상동역 롯데캐슬 단지 배치도" />
+                <img src="/assets/siteplan-top.png" alt="상동역 롯데캐슬 시그니처 단지 배치도" />
               </Zoom>
               <figcaption>단지 배치도 (CG)</figcaption>
             </Reveal>
@@ -64,7 +64,7 @@ export default function MasterPlan() {
             <Zoom full="/assets/landscape.jpg" caption="중앙광장 · 수경시설 (CG)">
               <Image
                 src="/assets/landscape.jpg"
-                alt="상동역 롯데캐슬 중앙광장 및 수경시설 조경 투시도"
+                alt="상동역 롯데캐슬 시그니처 중앙광장 및 수경시설 조경 투시도"
                 width={1160}
                 height={1325}
                 sizes="(max-width: 1024px) 100vw, 45vw"
