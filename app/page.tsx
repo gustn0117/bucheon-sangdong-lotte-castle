@@ -9,6 +9,7 @@ import Info from "./components/Info";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import FloatingCta from "./components/FloatingCta";
+import Popup from "./components/Popup";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       </main>
       <Footer />
       <FloatingCta />
+      <Popup />
     </>
   );
 }

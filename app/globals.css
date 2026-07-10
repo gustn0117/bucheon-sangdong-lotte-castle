@@ -507,3 +507,29 @@ footer{background:var(--bg);padding:56px 0 36px;border-top:1px solid var(--line)
 .admin-table th{background:var(--bg-soft);color:var(--navy);font-weight:700;font-size:.8rem;position:sticky;top:0}
 .admin-table td a{color:var(--gold-deep);font-weight:600}
 .admin-table .del{color:#c0492f;font-size:.82rem;font-weight:600}
+
+/* ===================== POPUP ===================== */
+.popup-overlay{position:fixed;inset:0;z-index:900;display:flex;align-items:center;justify-content:center;
+  padding:20px;background:rgba(12,16,24,.62);backdrop-filter:blur(2px);animation:popup-fade .25s var(--ease)}
+.popup{position:relative;width:min(450px,100%);animation:popup-rise .3s var(--ease)}
+.popup-img{display:block;border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+.popup-img img{display:block;width:100%;height:auto}
+.popup-x{position:absolute;top:10px;right:10px;z-index:2;width:34px;height:34px;display:grid;place-items:center;
+  border-radius:50%;background:rgba(0,0,0,.4);color:#fff;transition:background .2s var(--ease)}
+.popup-x:hover{background:rgba(0,0,0,.68)}
+.popup-x svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.popup-bar{display:flex;border-radius:0 0 10px 10px;overflow:hidden;background:#1c2026}
+.popup-bar button{flex:1;padding:14px 10px;color:#e8e6e2;font-size:.88rem;font-weight:600;
+  transition:background .2s var(--ease)}
+.popup-bar button:hover{background:#2a2f37}
+.popup-bar button+button{border-left:1px solid rgba(255,255,255,.14);flex:0 0 38%;color:#fff}
+
+@keyframes popup-fade{from{opacity:0}to{opacity:1}}
+@keyframes popup-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  .popup-overlay,.popup{animation:none}
+}
+@media (max-width:520px){
+  .popup-bar button{padding:15px 10px;font-size:.85rem}
+}
