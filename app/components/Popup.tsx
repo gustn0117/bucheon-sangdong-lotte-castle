@@ -58,7 +58,7 @@ export default function Popup() {
         className="popup"
         role="dialog"
         aria-modal="true"
-        aria-label="상동역 롯데캐슬 7월 오픈예정 안내"
+        aria-label="상동역 롯데캐슬 8월 7일 오픈예정 안내"
         onClick={(e) => e.stopPropagation()}
       >
         <button type="button" className="popup-x" onClick={close} aria-label="팝업 닫기">
@@ -70,7 +70,7 @@ export default function Popup() {
         <a href="#register" onClick={close} className="popup-img">
           <Image
             src="/assets/popup.jpg"
-            alt="상동역 롯데캐슬 — 49층 1,859세대, 7월 오픈예정"
+            alt="상동역 롯데캐슬 — 49층 1,859세대, 8월 7일 오픈예정"
             width={450}
             height={580}
             priority
