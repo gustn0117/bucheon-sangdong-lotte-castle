@@ -10,6 +10,7 @@ import Register from "./components/Register";
 import Footer from "./components/Footer";
 import FloatingCta from "./components/FloatingCta";
 import Popup from "./components/Popup";
+import RegisterAnchor from "./components/RegisterAnchor";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <Footer />
       <FloatingCta />
       <Popup />
+      <RegisterAnchor />
     </>
   );
 }
