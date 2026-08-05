@@ -16,6 +16,10 @@ export default function Hero() {
       </div>
 
       <div className="hero-content wrap">
+        <span className="hero-badge">
+          <i className="dot" aria-hidden="true" />
+          8월 중 오픈 예정
+        </span>
         <span className="eyebrow hero-eyebrow">Bucheon Sangdong · Lotte Castle</span>
         <h1>
           <span className="l1">7호선 상동역 초역세권, 도심 속 여유를 누리는</span>
