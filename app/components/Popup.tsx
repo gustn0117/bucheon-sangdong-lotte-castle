@@ -82,7 +82,7 @@ export default function Popup() {
             <path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7C12 7 10.5 3 8 3 6.5 3 6 4 6 5s.7 2 2 2h4zM12 7c0 0 1.5-4 4-4 1.5 0 2 1 2 2s-.7 2-2 2h-4z" />
           </svg>
           <span>
-            계약 시 <b>상품권 30만원</b> 증정
+            계약 시 <b>상품권</b> 증정
           </span>
         </a>
 

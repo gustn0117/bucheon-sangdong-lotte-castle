@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="foot-meta">
-            <div>
+            <div className="foot-tel">
               분양 문의 · <a href={`tel:${PROJECT.tel}`}><b>{PROJECT.tel}</b></a>
             </div>
             <div>경기도 부천시 원미구 상동 540-1 일원</div>
