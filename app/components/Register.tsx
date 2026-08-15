@@ -27,7 +27,12 @@ export default function Register() {
           <Reveal as="div" className="cta-call" delay={260}>
             <div className="cc-info">
               <span className="cc-label">전화 상담 · 분양 문의</span>
-              <a className="cc-num" href={`tel:${PROJECT.tel}`}>{PROJECT.tel}</a>
+              <a className="cc-num" href={`tel:${PROJECT.tel}`}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z" />
+                </svg>
+                {PROJECT.tel}
+              </a>
             </div>
             <a className="cc-btn" href={`tel:${PROJECT.tel}`}>
               <svg viewBox="0 0 24 24" aria-hidden="true">
