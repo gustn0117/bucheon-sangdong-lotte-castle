@@ -28,6 +28,47 @@ export const HERO_STATS: HeroStat[] = [
   { text: "롯데건설", label: "프리미엄 브랜드 시공" },
 ];
 
+export type HeroSlide = {
+  src: string;
+  alt: string;
+  position?: string;
+  mobilePosition?: string;
+  scale?: number;
+  mobileScale?: number;
+  origin?: string;
+  mobileOrigin?: string;
+};
+
+// 메인 대표 이미지. 이 배열에 같은 형식으로 항목을 추가하면 슬라이드가 자동 등록됩니다.
+export const HERO_SLIDES: readonly HeroSlide[] = [
+  {
+    src: "/assets/hero-towers.jpg",
+    alt: "상동역 롯데캐슬 시그니처 초고층 트윈 타워 조감도",
+    position: "50% 45%",
+    mobilePosition: "66% 50%",
+  },
+  {
+    src: "/assets/entrance-gate.jpg",
+    alt: "상동역 롯데캐슬 단지 주출입구 문주 조감도",
+    position: "50% 55%",
+    mobilePosition: "42% 51%",
+    scale: 1.3,
+    mobileScale: 1.65,
+    origin: "50% 54%",
+    mobileOrigin: "42% 51%",
+  },
+  {
+    src: "/assets/landscape.jpg",
+    alt: "상동역 롯데캐슬 중앙광장 조경 조감도",
+    position: "50% 0%",
+    mobilePosition: "50% 0%",
+    scale: 1.18,
+    mobileScale: 2.25,
+    origin: "50% 0%",
+    mobileOrigin: "50% 0%",
+  },
+];
+
 export const TICKER = [
   "7호선 상동역 초역세권",
   "지상 최고 49층 랜드마크",
